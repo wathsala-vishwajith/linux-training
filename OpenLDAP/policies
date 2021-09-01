@@ -1,0 +1,4 @@
+dn:ou=policies,dc=ltacademy,dc=com
+objectClass:organizationalUnit
+objectClass:top
+ou:policies

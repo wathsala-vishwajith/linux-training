@@ -1,0 +1,9 @@
+dn: ou=permanent,dc=ltacademy,dc=com
+objectclass:organizationalunit
+ou:permanent
+description:Permanent Employees
+
+dn: ou=contract,dc=ltacademy,dc=com
+objectclass:organizationalunit
+ou:contract
+description:Contract Employees
