@@ -1,0 +1,31 @@
+- name: Configure VM
+  hosts: <ip1>
+  vars:
+    http_host: "instance1"
+  tasks:
+  - name: install apache2
+    apt: name=apache2 update_cache=yes state=latest
+  - name: swap index.html
+    file:
+      src: "~/ansible-playground/files/index.html.j2"
+      dest: "/var/www/html/index.html"
+      notify: restart-apache2
+
+- name: Configure VM
+  hosts: <ip2>
+  vars:
+    http_host: "instance2"
+  tasks:
+  - name: install apache2
+    apt: name=apache2 update_cache=yes state=latest
+  - name: swap index.html
+    file:
+      src: "~/ansible-playground/files/index.html.j2"
+      dest: "/var/www/html/index.html"
+      notify: restart-apache2
+
+- handlers:
+   - name : restart-apache2
+     service:
+         name: apache2
+         state: restarted
