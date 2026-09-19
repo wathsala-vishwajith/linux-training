@@ -1,1 +1,1 @@
-# linux-training
+# WSO2 DevOps and Linux Training
